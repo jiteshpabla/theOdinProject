@@ -1,0 +1,75 @@
+function makeRoman(n, a,b,c)
+{
+  switch(n)
+    {
+      case 1:
+        return a;
+      
+      case 2:
+        return a+a;
+      
+      case 3:
+        return a+a+a;
+        
+      case 4:
+        return a+b;
+        
+      case 5:
+        return b;
+        
+      case 6:
+        return b+a;
+        
+      case 7:
+        return b+a+a;
+        
+      case 8:
+        return b+a+a+a;
+        
+      case 9:
+        return a+c;
+    }
+}
+
+
+function convertToRoman(num) {
+  
+  var i=1;
+  var ones, tens, thous, final;
+  
+  while(num>=0)
+    {
+      var x = num%10;
+      num = (num-x)/10;
+      return num;
+      
+      
+      switch(i)
+        {
+            case 1:
+              ones = makeRoman(num, "I", "V", "X");
+              break;
+            
+            case 2:
+              tens = makeRoman(num, "X", "L", "C");
+              break;
+            
+            case 3:
+              thous = makeRoman(num, "C", "D", "M");
+              break;
+            
+           /* case 1:
+              makeRoman(num, "I", "V", "X");
+              break;  */
+              
+        }
+      
+      i++;
+    }
+  
+ final = thous+tens+ones;
+  
+ return final;
+}
+
+convertToRoman(361);
