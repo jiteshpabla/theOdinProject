@@ -1,0 +1,31 @@
+
+function rot13(str) { // LBH QVQ VG!
+  
+  //console.log("hello");
+  
+  
+  var res = str.split("");
+  
+  res.forEach(function(item, index){
+    if(item.match(/[A-M]/i))
+      {
+        item+=26;
+      }
+    else if(item.match(/[N-Z]/i))
+      {
+        item-=26;
+      }
+  });
+  
+  
+  
+  
+  
+  
+  
+  
+  return res;
+}
+
+// Change the inputs below to test
+rot13("SERR PBQR PNZC");
